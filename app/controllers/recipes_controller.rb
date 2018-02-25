@@ -18,4 +18,9 @@ class RecipesController < ApplicationController
   def update
 
   end
+
+  private
+
+  def recipe_params
+    params.require('recipe').permit(:name, :ingredient_ids[])
 end
